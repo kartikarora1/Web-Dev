@@ -1,0 +1,60 @@
+<html>
+<script>
+
+function showT(){
+var d = new Date();
+var t = d.getHours();
+var m = d.getMinutes();
+var zH = "";
+var zM = "";
+if(t>12)
+t=t-12;
+
+if(t<10)
+zH = "0";
+if(m<10)
+zM = "0";
+document.getElementById("clock").innerHTML = "Current Time:"+zH + t + ":" + zM + m;
+}
+
+
+function show(){
+var n = document.getElementById('name').value;
+var x = document.getElementById("date");
+var d = new Date();
+var t = d.getHours();
+if(t <= 12)
+x.innerHTML = "Hello, " + n + ". Good Morning!";
+else if(t <= 15)
+x.innerHTML = "Hello, " + n + ". Good Afternoon!";
+else if(t <= 20)
+x.innerHTML = "Hello, " + n + ". Good Evening!";
+else
+x.innerHTML = "Hello, " + n + ". Good Night!";
+
+}
+</script>
+<style>
+#clock{
+border: 1px dotted black;
+padding:20px;
+border-radius: 20%;
+font-size: 40px;
+text-align: center;
+width:50%;
+}
+#aa{margin-left:140px;}
+</style>
+<body  onload="showT()">
+<h1 style="margin-left:140px">My WishMaster</h1>
+<div>
+<p id = "clock"></p>
+</div>
+<br><br>
+<div id="aa">
+<input type = "text" id = "name">
+<button onclick = "show()">Wish Me</button>
+<p id = "date"></p></div>
+</body>
+</html>
+
